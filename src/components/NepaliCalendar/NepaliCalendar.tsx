@@ -75,7 +75,12 @@ const NepaliCalendar: React.FC<INepaliCalendarProps> = ({
     <div className="ndt-calendar">
       <div className={`ndt-calendar-controls ${styles.calendarControls}`}>
         <div className={`ndt-prev ${styles.prevNext}`}>
-          <span onClick={setPrevMonth}>
+          <button
+            onClick={setPrevMonth}
+            type="button"
+            tabIndex={-1}
+            aria-label="prev-month"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -91,9 +96,9 @@ const NepaliCalendar: React.FC<INepaliCalendarProps> = ({
                 d="M16.283 18.907L9.6 12l6.683-5.438"
               ></path>
             </svg>
-          </span>
+          </button>
         </div>
-        <div>
+        <div className={`ndt-year-month-select ${styles.yerMonthContainer}`}>
           <YearSelector
             selectedYear={selectedYear}
             onChange={newYear => setSelectedYear(newYear)}
@@ -104,7 +109,12 @@ const NepaliCalendar: React.FC<INepaliCalendarProps> = ({
           />
         </div>
         <div className={`ndt-next ${styles.prevNext}`}>
-          <span onClick={setNextMonth}>
+          <button
+            onClick={setNextMonth}
+            type="button"
+            tabIndex={-1}
+            aria-label="next-onth"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -121,7 +131,7 @@ const NepaliCalendar: React.FC<INepaliCalendarProps> = ({
                 d="M16.283 18.907L9.6 12l6.683-5.438"
               ></path>
             </svg>
-          </span>
+          </button>
         </div>
       </div>
       <div className={`ndt-calendar-container ${styles.calendarContainer}`}>
